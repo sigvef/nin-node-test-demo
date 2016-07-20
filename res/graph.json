@@ -1,0 +1,79 @@
+[
+  {
+    "id": "myTextureA",
+    "type": "NIN.TextureNode",
+    "options": {
+      "path": "res/lena.gif"
+    },
+    "connectedTo": {
+      "A": "lenascene.B"
+    },
+    "x": -30,
+    "y": -58
+  },
+  {
+    "id": "myTextureB",
+    "type": "NIN.TextureNode",
+    "x": -281.00001525878906,
+    "y": -67,
+    "options": {
+      "path": "res/baboon.jpg"
+    },
+    "connectedTo": {
+      "A": "baboonscene.B"
+    }
+  },
+  {
+    "id": "baboonSSAO",
+    "type": "SSAONode",
+    "connectedTo": {
+      "A": "sceneselect.A"
+    },
+    "x": -152,
+    "y": 246
+  },
+  {
+    "id": "lenaSSAO",
+    "type": "SSAONode",
+    "connectedTo": {
+      "A": "sceneselect.B"
+    },
+    "x": 86,
+    "y": 221
+  },
+  {
+    "id": "baboonscene",
+    "type": "CubeNode",
+    "x": -225.39717149734497,
+    "y": 91.83705711364746,
+    "connectedTo": {
+      "depth": "baboonSSAO.depth",
+      "render": "baboonSSAO.render"
+    }
+  },
+  {
+    "id": "lenascene",
+    "type": "CubeNode",
+    "x": 9.60283613204956,
+    "y": 84.83705711364746,
+    "connectedTo": {
+      "depth": "lenaSSAO.depth",
+      "render": "lenaSSAO.render"
+    }
+  },
+  {
+    "id": "sceneselect",
+    "type": "SceneSwitcherNode",
+    "connectedTo": {
+      "selected": "root.screen"
+    },
+    "x": 11,
+    "y": 403
+  },
+  {
+    "x": 238,
+    "y": 386,
+    "id": "root",
+    "type": "NIN.RootNode"
+  }
+]
