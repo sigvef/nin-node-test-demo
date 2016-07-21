@@ -23,14 +23,6 @@
         this.inputs.A.enabled = false;
       }
     }
-
-    render(renderer) {
-    }
-
-    resize() {
-      this.renderTarget.setSize(16 * GU, 9 * GU);
-      this.depthRenderTarget.setSize(16 * GU, 9 * GU);
-    }
   }
 
   global.SceneSwitcherNode = SceneSwitcherNode;
